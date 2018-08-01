@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 /**
  * ProtectedRoute replaces a regular Route component whenever we want
@@ -35,7 +35,7 @@ export default class ProtectedRoute extends Component {
   }
 }
 
-ProtectedRoute.PropTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-  component: PropTypes.func
+ProtectedRoute.propTypes = {
+  isAuthenticated: propTypes.bool.isRequired,
+  component: propTypes.func
 };

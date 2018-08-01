@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import Header from '../Header';
 import './style.css';
+import Card from '../Card';
 
 export default class Homepage extends Component {
   componentDidMount() {
@@ -17,14 +18,14 @@ export default class Homepage extends Component {
       );
     } else {
       displayJobs = this.props.jobs.map(job => (
-        <div key={job.id}>
-          <li>
-            {job.title} @{job.company}
-          </li>
-          <li>
-            {job.salary} | {job.equity}
-          </li>
-        </div>
+        <Card
+          key={job.id}
+          title={job.title}
+          company={job.company}
+          salary={job.salary}
+          equity={job.equity}
+          logo={job.logo}
+        />
       ));
     }
 
@@ -41,6 +42,6 @@ export default class Homepage extends Component {
 }
 
 Homepage.propTypes = {
-  jobs: PropTypes.arrayOf(PropTypes.object),
-  fetchJobsRequest: PropTypes.func
+  jobs: propTypes.arrayOf(propTypes.object),
+  fetchJobsRequest: propTypes.func
 };

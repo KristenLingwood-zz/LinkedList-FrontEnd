@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LinkedListLogo from '../../images/LinkedList_logo.png';
 import './style.css';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 const DEFAULT_STATE = {
   username: '',
@@ -85,8 +85,8 @@ export default class Login extends Component {
   }
 }
 
-Login.PropTypes = {
-  authRequest: PropTypes.func,
-  clearError: PropTypes.func,
-  error: PropTypes.object
+Login.propTypes = {
+  authRequest: propTypes.func,
+  clearError: propTypes.func,
+  error: propTypes.object
 };
