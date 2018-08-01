@@ -29,3 +29,7 @@ export const SET_ERROR = 'SET_ERROR';
 export const CLEAR_ERROR = 'CLEAR_ERROR';
 
 export const LOGOUT = 'LOGOUT';
+
+export const FETCH_SEARCH_RESULTS = 'FETCH_SEARCH_RESULTS';
+export const FETCH_SEARCH_SUCCESS = 'FETCH_SEARCH_SUCCESS';
+export const FETCH_SEARCH_FAIL = 'FETCH_SEARCH_FAIL';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import Header from '../Header';
+import Header from '../../containers/Header';
 import './style.css';
 import Card from '../Card';
 

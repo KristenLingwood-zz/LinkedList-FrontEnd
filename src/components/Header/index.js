@@ -15,7 +15,7 @@ const DEFAULT_STATE = {
 export default class Header extends Component {
   state = DEFAULT_STATE;
 
-  handleSearch = e => {
+  handleSearch = async e => {
     e.preventDefault();
     const category = this.state.searchCategoryIdx;
     let searchCat;
@@ -26,13 +26,12 @@ export default class Header extends Component {
     } else if (category === 2) {
       searchCat = 'users';
     }
-    const results = callAPI(
-      'GET',
-      `/${searchCat}?${this.state.searchText}`,
-      true
-    );
-    console.log(results);
-    this.setState({ ...this.state, searchResults: results });
+    try {
+      await this.props.getSearchResults(searchCat, this.state.searchText);
+      this.setState(DEFAULT_STATE); // clear state
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   handleChange = e => {
