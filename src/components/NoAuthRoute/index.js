@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 /**
  * NoAuthRoute replaces a regular Route component whenever we want
@@ -32,3 +33,8 @@ export default class NoAuthRoute extends Component {
     );
   }
 }
+
+NoAuthRoute.PropTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  component: PropTypes.func
+};

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LinkedListLogo from '../../images/LinkedList_logo.png';
 import { Link } from 'react-router-dom';
 import './style.css';
+import PropTypes from 'prop-types';
 
 const DEFAULT_STATE = {
   username: '',
@@ -139,3 +140,10 @@ export default class Signup extends Component {
     );
   }
 }
+
+Signup.PropTypes = {
+  clearError: PropTypes.func,
+  createUserRequest: PropTypes.func,
+  authRequest: PropTypes.func,
+  error: PropTypes.object
+};

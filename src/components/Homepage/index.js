@@ -41,5 +41,6 @@ export default class Homepage extends Component {
 }
 
 Homepage.propTypes = {
-  currentUser: PropTypes.object
+  jobs: PropTypes.arrayOf(PropTypes.object),
+  fetchJobsRequest: PropTypes.func
 };
