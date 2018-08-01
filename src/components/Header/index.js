@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import UserProfilePlaceholder from '../../images/user_placeholder.png';
 import './style.css';
 import propTypes from 'prop-types';
+import axios from 'axios';
+import { callAPI } from '../../services/api';
 
 const DEFAULT_STATE = {
   searchText: '',
@@ -15,7 +17,22 @@ export default class Header extends Component {
 
   handleSearch = e => {
     e.preventDefault();
-    // TODO: search
+    const category = this.state.searchCategoryIdx;
+    let searchCat;
+    if (category === 0) {
+      searchCat = 'companies';
+    } else if (category === 1) {
+      searchCat = 'jobs';
+    } else if (category === 2) {
+      searchCat = 'users';
+    }
+    const results = callAPI(
+      'GET',
+      `/${searchCat}?${this.state.searchText}`,
+      true
+    );
+    console.log(results);
+    this.setState({ ...this.state, searchResults: results });
   };
 
   handleChange = e => {
