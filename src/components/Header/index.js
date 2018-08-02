@@ -76,9 +76,28 @@ export default class Header extends Component {
           </div>
           <input type="submit" value="Search" className="search-btn" />
         </form>
-        <div className="profile-area">
-          <img src={profilePic} alt="Profile" />
-          <span>{displayName}</span>
+        <div className="dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <div className="profile-area">
+              <img src={profilePic} alt="Profile" />
+              <span>{displayName}</span>
+            </div>
+          </button>
+          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <Link className="dropdown-item" to="#">
+              User Profile
+            </Link>
+            <Link className="dropdown-item" to="#">
+              Logout
+            </Link>
+          </div>
         </div>
       </div>
     );
