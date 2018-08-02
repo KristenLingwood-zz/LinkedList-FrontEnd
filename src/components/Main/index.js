@@ -13,7 +13,6 @@ export default class Main extends Component {
   // }
 
   render() {
-    console.log('main props', this.props);
     return (
       <div className="container">
         <Switch>
@@ -22,12 +21,7 @@ export default class Main extends Component {
           <NoAuthRoute exact path="/signup" component={Signup} />
           {/* ProtectedRoutes only let you go to them if you are authenticated */}
           <ProtectedRoute exact path="/" component={Homepage} />
-          {/* this.props.username is undefined-- KNOWN bug */}
-          <ProtectedRoute
-            exact
-            path={`/users/${this.props.username}`}
-            component={props => <Profile {...props} />}
-          />
+          <ProtectedRoute exact path="/users/:username" component={Profile} />
         </Switch>
       </div>
     );

@@ -24,7 +24,7 @@ export function authRequest(type, usernameOrHandle, password) {
   };
 }
 
-export function authSuccess(type, token, username) {
+export function authSuccess(type, token) {
   setToken(token);
   if (type === 'user') {
     return { type: t.USER_AUTH_SUCCESS };

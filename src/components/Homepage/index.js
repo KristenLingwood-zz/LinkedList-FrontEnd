@@ -27,7 +27,7 @@ export default class Homepage extends Component {
       ));
       return (
         <div>
-          <Header username={this.props.currentUser.username} />
+          <Header />
           <div className="feed">
             <h1>Search Results</h1>
             {results}

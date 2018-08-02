@@ -46,6 +46,7 @@ export default class Header extends Component {
     console.log('header props', this.props);
     const { searchText, searchCategoryIdx } = this.state;
     const { searchCategories, displayName, profilePic } = this.props;
+    console.log('username', this.props.currentUser.username);
     return (
       <div className="Header">
         <Link to="/" className="Header-logo">
@@ -94,7 +95,7 @@ export default class Header extends Component {
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <Link
               className="dropdown-item"
-              to={`/users/${this.props.username}`}
+              to={`/users/${this.props.currentUser.username}`}
             >
               User Profile
             </Link>
