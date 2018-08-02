@@ -17,7 +17,11 @@ export default class Main extends Component {
           <NoAuthRoute exact path="/signup" component={Signup} />
           {/* ProtectedRoutes only let you go to them if you are authenticated */}
           <ProtectedRoute exact path="/" component={Homepage} />
-          <ProtectedRoute exact path="/users/:username" component={Profile} />
+          <ProtectedRoute
+            exact
+            path={`/users/${username}`}
+            component={Profile}
+          />
         </Switch>
       </div>
     );
