@@ -5,7 +5,11 @@ export function getSearchResults(path, queryString) {
   return async dispatch => {
     try {
       dispatch({ type: t.FETCH_SEARCH_RESULTS });
-      let searchResult = await callAPI('GET', `/${path}?${queryString}`, true);
+      let searchResult = await callAPI(
+        'GET',
+        `/${path}?search=${queryString}`,
+        true
+      );
       dispatch(getSearchSuccess(searchResult));
     } catch (error) {
       dispatch(getSearchFail(error));

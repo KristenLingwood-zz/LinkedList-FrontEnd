@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import Header from '../../containers/Header';
 import './style.css';
 import Card from '../Card';
+import SearchCard from '../SearchCard';
 
 export default class Homepage extends Component {
   componentDidMount() {
@@ -13,7 +14,7 @@ export default class Homepage extends Component {
     const { jobs, searchResults } = this.props;
     let displayJobs;
 
-    if (searchResults.length > 0) {
+    if (searchResults.length > 0 && searchResults[0].salary) {
       const results = this.props.searchResults.map(res => (
         <Card
           key={res.id}
@@ -22,6 +23,28 @@ export default class Homepage extends Component {
           salary={res.salary}
           equity={res.equity}
           logo={res.logo}
+        />
+      ));
+      return (
+        <div>
+          <Header />
+          <div className="feed">
+            <h1>Search Results</h1>
+            {results}
+          </div>
+        </div>
+      );
+    } else if (searchResults.length > 0) {
+      const results = this.props.searchResults.map(res => (
+        <SearchCard
+          key={res.id}
+          name={res.name}
+          first_name={res.first_name}
+          last_name={res.last_name}
+          handle={res.handle}
+          username={res.username}
+          logo={res.logo}
+          photo={res.photo}
         />
       ));
       return (
