@@ -43,6 +43,7 @@ export default class Header extends Component {
   };
 
   render() {
+    console.log('header props', this.props);
     const { searchText, searchCategoryIdx } = this.state;
     const { searchCategories, displayName, profilePic } = this.props;
     return (
@@ -91,7 +92,10 @@ export default class Header extends Component {
             </div>
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <Link className="dropdown-item" to="#">
+            <Link
+              className="dropdown-item"
+              to={`/users/${this.props.username}`}
+            >
               User Profile
             </Link>
             <Link className="dropdown-item" to="#">

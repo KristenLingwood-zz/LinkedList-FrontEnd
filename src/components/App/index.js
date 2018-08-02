@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from '../../store';
 import { stayLoggedIn } from '../../store/actions/auth';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Main from '../Main';
+import Main from '../../containers/Main';
 import './style.css';
 
 const store = configureStore();

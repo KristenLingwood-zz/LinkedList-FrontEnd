@@ -8,7 +8,7 @@ export default class ProfileCard extends Component {
       <div className="card">
         <img src={this.props.img} alt="user pic" />
         <div>
-          <p>{(this.props.first, +' ' + this.props.last)}</p>
+          <p>{this.props.first + ' ' + this.props.last}</p>
           <p>Employed By {this.props.currCompany}</p>
         </div>
       </div>
