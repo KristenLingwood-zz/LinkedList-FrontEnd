@@ -10,9 +10,30 @@ export default class Homepage extends Component {
   }
 
   render() {
-    const { jobs } = this.props;
+    const { jobs, searchResults } = this.props;
     let displayJobs;
-    if (jobs.length === 0) {
+
+    if (searchResults.length > 0) {
+      const results = this.props.searchResults.map(res => (
+        <Card
+          key={res.id}
+          title={res.title}
+          company={res.company}
+          salary={res.salary}
+          equity={res.equity}
+          logo={res.logo}
+        />
+      ));
+      return (
+        <div>
+          <Header />
+          <div className="feed">
+            <h1>Search Results</h1>
+            {results}
+          </div>
+        </div>
+      );
+    } else if (jobs.length === 0) {
       displayJobs = (
         <h3>Sorry, no jobs are available right now. Please try again later.</h3>
       );

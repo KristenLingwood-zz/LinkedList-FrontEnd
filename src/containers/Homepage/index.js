@@ -5,7 +5,8 @@ import { fetchJobsRequest } from '../../store/actions/jobs';
 function mapStateToProps(reduxState) {
   return {
     currentUser: reduxState.currentUser,
-    jobs: reduxState.jobs
+    jobs: reduxState.jobs,
+    searchResults: reduxState.search
   };
 }
 
