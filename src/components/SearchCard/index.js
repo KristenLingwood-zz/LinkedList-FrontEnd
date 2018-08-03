@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
+import { Link } from 'react-router-dom';
 
 class SearchCard extends Component {
   render() {
@@ -18,7 +19,9 @@ class SearchCard extends Component {
             {name} @{handleName}
           </p>
         </div>
-        <button>CONTACT</button>
+        <Link to={`/users/${handleName}`} otherUser={handleName}>
+          <button>See Profile</button>{' '}
+        </Link>
       </div>
     );
   }

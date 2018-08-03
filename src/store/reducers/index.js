@@ -4,13 +4,15 @@ import currentUser from './currentUser';
 import error from './error';
 import jobs from './jobs';
 import search from './search';
+import otherUser from './OtherUser';
 
 const rootReducer = combineReducers({
   auth,
   currentUser,
   jobs,
   error,
-  search
+  search,
+  otherUser
 });
 
 export default rootReducer;
