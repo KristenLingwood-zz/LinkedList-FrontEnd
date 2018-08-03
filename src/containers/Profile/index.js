@@ -6,7 +6,7 @@ function mapStateToProps(reduxState) {
   return {
     isAuthenticated: reduxState.auth.isAuthenticated,
     currentUser: reduxState.currentUser,
-    nonLoggedInUser: reduxState.nonLoggedInUser
+    otherUser: reduxState.otherUser
   };
 }
 

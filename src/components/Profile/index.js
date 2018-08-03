@@ -5,13 +5,13 @@ import Header from '../../containers/Header';
 
 export default class Profile extends Component {
   componentDidMount() {
-    this.props.getOtherUserProfile(this.props.otherUser);
+    this.props.getOtherUserProfile(this.props.match.params.username);
   }
   render() {
     console.log('profile props', this.props);
     const user = this.props.currentUser;
     const otherUser = this.props.otherUser;
-    if (this.props.currentUser.username === this.props.otherUser) {
+    if (this.props.currentUser.username === this.props.match.params.username) {
       return (
         <div>
           <Header />

@@ -19,7 +19,7 @@ class SearchCard extends Component {
             {name} @{handleName}
           </p>
         </div>
-        <Link to={`/users/${handleName}`} otherUser={handleName}>
+        <Link to={`/users/${handleName}`} >
           <button>See Profile</button>{' '}
         </Link>
       </div>
