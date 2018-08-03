@@ -5,7 +5,7 @@ import Header from '../../containers/Header';
 
 export default class Profile extends Component {
   componentDidMount() {
-    // fetch the user based on the username
+    this.props.getOtherUserProfile(this.props.match.params.username);
   }
   render() {
     console.log('profile props', this.props);
