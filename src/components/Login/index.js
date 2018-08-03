@@ -18,7 +18,6 @@ export default class Login extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    console.log(this.props);
     this.props.clearError();
     let userCredentials = { ...this.state };
     // call redux
@@ -30,7 +29,6 @@ export default class Login extends Component {
       );
       this.props.getUserProfile(this.state.username);
       this.props.history.push('/');
-      console.log(this.props);
     } catch (error) {
       return;
     }

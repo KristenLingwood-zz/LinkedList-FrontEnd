@@ -2,11 +2,11 @@ import * as t from '../../actions/actionTypes';
 
 const DEFAULT_STATE = [];
 
-export default function jobsReducer(state = DEFAULT_STATE, action) {
+export default function specificJob(state = DEFAULT_STATE, action) {
   switch (action.type) {
-    case t.FETCH_JOBS_SUCCESS: {
+    case t.FETCH_SPECIFIC_JOB_SUCCESS: {
       // expects an array
-      return [...state, action.jobs];
+      return [...state, action.specificJob];
     }
     default:
       return state;

@@ -5,6 +5,7 @@ import error from './error';
 import jobs from './jobs';
 import search from './search';
 import otherUser from './OtherUser';
+import specificJobReducer from './specificJob';
 
 const rootReducer = combineReducers({
   auth,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   jobs,
   error,
   search,
-  otherUser
+  otherUser,
+  specificJobReducer
 });
 
 export default rootReducer;

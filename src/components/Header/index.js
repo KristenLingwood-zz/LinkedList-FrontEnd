@@ -42,11 +42,14 @@ export default class Header extends Component {
     this.setState({ searchCategoryIdx: idx });
   };
 
+  handleLogout = () => {
+    this.props.logout();
+  };
+
   render() {
-    console.log('header props', this.props);
     const { searchText, searchCategoryIdx } = this.state;
     const { searchCategories, displayName, profilePic } = this.props;
-    console.log('username', this.props.currentUser.username);
+    console.log('history props', this.props.history);
     return (
       <div className="Header">
         <Link to="/" className="Header-logo">
@@ -99,9 +102,9 @@ export default class Header extends Component {
             >
               User Profile
             </Link>
-            <Link className="dropdown-item" to="#">
+            <button className="dropdown-item" onClick={this.handleLogout}>
               Logout
-            </Link>
+            </button>
           </div>
         </div>
       </div>
