@@ -5,7 +5,7 @@ import Header from '../../containers/Header';
 
 export default class Profile extends Component {
   componentDidMount() {
-    this.props.getOtherUserProfile(this.props.match.params.username);
+    this.props.getOtherUserProfile('test');
   }
   render() {
     console.log('profile props', this.props);
